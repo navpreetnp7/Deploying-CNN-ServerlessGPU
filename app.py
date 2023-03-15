@@ -2,6 +2,8 @@ import torch
 from model.model import OnnxModel
 from PIL import Image
 import time
+import requests
+from io import BytesIO
 
 
 # Init is ran on server startup
@@ -21,7 +23,9 @@ def inference(model_inputs:dict) -> dict:
 
     # Parse out your arguments
     img_path = model_inputs.get('input', None)
-    img = Image.open(img_path)
+    response = requests.get(img_path)
+    img = Image.open(BytesIO(response.content))
+
     if img == None:
         return {'message': "No image provided"}
     
