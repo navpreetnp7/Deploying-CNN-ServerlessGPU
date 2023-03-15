@@ -20,7 +20,8 @@ def inference(model_inputs:dict) -> dict:
     global model
 
     # Parse out your arguments
-    img = model_inputs.get('input', None)
+    img_path = model_inputs.get('input', None)
+    img = Image.open(img_path)
     if img == None:
         return {'message': "No image provided"}
     

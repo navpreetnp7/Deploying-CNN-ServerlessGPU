@@ -2,13 +2,15 @@
 # Run it with `python3 test.py``
 
 import requests
-from PIL import Image
+import banana_dev as banana
 
-api_url = 'http://localhost:8000/'
+api_key = "79b191e0-8392-4e6b-bc52-f1440148e59a"
+model_key = "4ef22b5a-a258-4eb7-ae78-ca456c8d111e"
 
-img = Image.open("images/n01440764_tench.JPEG")
-model_inputs = {'input': img.tolist()}
+img_path = "images/n01440764_tench.JPEG"
+model_inputs = {'input': img_path}
 
-response = requests.post(api_url, json = model_inputs)
+response = banana.run(api_key, model_key, model_inputs)
+output = response['modelOutputs'][0]['output']
 
-print(response.json())
+print(output)
