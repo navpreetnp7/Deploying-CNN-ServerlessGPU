@@ -33,4 +33,4 @@ def inference(model_inputs:dict) -> dict:
     result = model.predict(img)
 
     # Return the results as a dictionary
-    return {'output' : torch.argmax(torch.Tensor(result))}
+    return {'output' : torch.argmax(torch.Tensor(result)).tolist()}

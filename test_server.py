@@ -4,7 +4,7 @@
 import banana_dev as banana
 
 api_key = "79b191e0-8392-4e6b-bc52-f1440148e59a"
-model_key = "2166cbfc-ce47-45e2-aa6f-bf87d6059230"
+model_key = "9101352f-830c-4dc6-9f48-f12092609d42"
 
 img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01440764_tench.jpeg"
 model_inputs = {'input': img_path}
