@@ -13,6 +13,7 @@ class OnnxModel:
         self.output_name = self.session.get_outputs()[0].name
     
     def predict(self, input_data):
+        input_data = self.preprocess_numpy(input_data).unsqueeze(0)
         input_data = np.array(input_data)
         input_data = input_data.astype(np.float32)
         output = self.session.run([self.output_name], {self.input_name: input_data})
