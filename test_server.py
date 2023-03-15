@@ -2,9 +2,13 @@
 # Run it with `python3 test.py``
 
 import requests
+from PIL import Image
 
-model_inputs = {'prompt': 'Hello I am a [MASK] model.'}
+api_url = 'http://localhost:8000/'
 
-res = requests.post('http://localhost:8000/', json = model_inputs)
+img = Image.open("images/n01440764_tench.JPEG")
+model_inputs = {'input': img.tolist()}
 
-print(res.json())
+response = requests.post(api_url, json = model_inputs)
+
+print(response.json())

@@ -9,3 +9,4 @@ onnxruntime
 torchvision
 PIL
 pytest
+requests

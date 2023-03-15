@@ -20,12 +20,12 @@ def inference(model_inputs:dict) -> dict:
     global model
 
     # Parse out your arguments
-    prompt = model_inputs.get('prompt', None)
-    if prompt == None:
-        return {'message': "No prompt provided"}
+    img = model_inputs.get('input', None)
+    if img == None:
+        return {'message': "No image provided"}
     
     # Run the model
-    result = model(prompt)
+    result = model.predict(img)
 
     # Return the results as a dictionary
-    return result
+    return {'output' : torch.argmax(torch.Tensor(result))}
