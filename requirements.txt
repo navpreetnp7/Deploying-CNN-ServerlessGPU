@@ -1,11 +1,9 @@
 sanic==22.6.2
 accelerate
 Flask
-pytorch
 numpy
 onnx
 onnxruntime
-torchvision
 pillow
 pytest
 requests
