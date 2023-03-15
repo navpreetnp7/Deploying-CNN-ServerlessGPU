@@ -11,13 +11,13 @@ from io import BytesIO
 api_key = "79b191e0-8392-4e6b-bc52-f1440148e59a"
 model_key = "9101352f-830c-4dc6-9f48-f12092609d42"
 
-def test_tench(img_path):
+def test_tench():
     img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01440764_tench.jpeg"
     output, time = get_prediction(img_path)
     assert output == 0
     print('Image is correctly predicted to belong to class tench')
 
-def test_turtle(img_path):
+def test_turtle():
     img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01667114_mud_turtle.JPEG"
     output, time = get_prediction(img_path)
     assert output == 35
