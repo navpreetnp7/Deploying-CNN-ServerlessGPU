@@ -6,6 +6,6 @@ numpy
 onnx
 onnxruntime
 torchvision
-PIL
+pillow
 pytest
 requests
