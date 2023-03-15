@@ -19,8 +19,8 @@ def init():
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
 def inference(model_inputs:dict) -> dict:
+    start_time = time.time()
     global model
-
     # Parse out your arguments
     img_path = model_inputs.get('input', None)
     response = requests.get(img_path)
@@ -32,5 +32,7 @@ def inference(model_inputs:dict) -> dict:
     # Run the model
     result = model.predict(img)
 
+    end_time = time.time() - start_time
+
     # Return the results as a dictionary
-    return {'output' : torch.argmax(torch.Tensor(result)).tolist()}
+    return {'output' : torch.argmax(torch.Tensor(result)).tolist(), 'time' : end_time}

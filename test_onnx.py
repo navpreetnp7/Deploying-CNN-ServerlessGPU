@@ -17,6 +17,7 @@ class TestOnnx:
         img = Image.open(BytesIO(response.content))
         res = model.predict(img)
         assert torch.argmax(torch.Tensor(res)) == torch.Tensor([0])
+        print(f'Image is correctly predicted to belong to class tench')
 
     def test_turtle(self):
         global model
@@ -25,3 +26,9 @@ class TestOnnx:
         img = Image.open(BytesIO(response.content))
         res = model.predict(img)
         assert torch.argmax(torch.Tensor(res)) == torch.Tensor([35])
+        print(f'Image is correctly predicted to belong to class mud_turtle')
+
+if __name__ == '__main__':
+    test = TestOnnx()
+    test.test_tench()
+    test.test_turtle()
