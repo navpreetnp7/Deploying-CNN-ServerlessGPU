@@ -12,7 +12,7 @@ class TestOnnx:
 
     def test_tench(self):
         global model
-        img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01440764_tench.jpeg"
+        img_path = "https://raw.githubusercontent.com/navpreetnp7/Deploying-CNN-ServerlessGPU/main/images/n01440764_tench.jpeg"
         response = requests.get(img_path)
         img = Image.open(BytesIO(response.content))
         res = model.predict(img)
@@ -21,7 +21,7 @@ class TestOnnx:
 
     def test_turtle(self):
         global model
-        img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01667114_mud_turtle.JPEG"
+        img_path = "https://raw.githubusercontent.com/navpreetnp7/Deploying-CNN-ServerlessGPU/main/images/n01667114_mud_turtle.JPEG"
         response = requests.get(img_path)
         img = Image.open(BytesIO(response.content))
         res = model.predict(img)
