@@ -52,6 +52,6 @@ Run the script and provide the following arguments:
  You can use the following command, for example,  to run it and verify :
 
 ```
-python test_server.py --test "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01667114_mud_turtle.JPEG
+python test_server.py --test "https://raw.githubusercontent.com/navpreetnp7/Deploying-CNN-ServerlessGPU/main/images/n01667114_mud_turtle.JPEG"
 ```
 
