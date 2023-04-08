@@ -12,13 +12,13 @@ api_key = "79b191e0-8392-4e6b-bc52-f1440148e59a"
 model_key = "f01b3fe4-e4cb-4028-bac5-ad610e8c4d90"
 
 def test_tench():
-    img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01440764_tench.jpeg"
+    img_path = "https://raw.githubusercontent.com/navpreetnp7/Deploying-CNN-ServerlessGPU/main/images/n01440764_tench.jpeg"
     output, time = get_prediction(img_path)
     assert output == 0
     print('Image is correctly predicted to belong to class tench')
 
 def test_turtle():
-    img_path = "https://raw.githubusercontent.com/MTailorEng/mtailor_mlops_assessment/main/n01667114_mud_turtle.JPEG"
+    img_path = "https://raw.githubusercontent.com/navpreetnp7/Deploying-CNN-ServerlessGPU/main/images/n01667114_mud_turtle.JPEG"
     output, time = get_prediction(img_path)
     assert output == 35
     print('Image is correctly predicted to belong to class mud_turtle')
